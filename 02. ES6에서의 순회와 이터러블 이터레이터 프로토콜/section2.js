@@ -68,28 +68,34 @@
 
 // ### 사용자 정의 이터러블을 통해 알아보기
 
-const iterable = {
-  [Symbol.iterator]() {
-    let i = 3;
-    return {
-      next() {
-        return i === 0 ? { done: true } : { value: i--, done: false };
-      },
-      [Symbol.iterator]() {
-        return this;
-      },
-    };
-  },
-};
+// const iterable = {
+//   [Symbol.iterator]() {
+//     let i = 3;
+//     return {
+//       next() {
+//         return i === 0 ? { done: true } : { value: i--, done: false };
+//       },
+//       [Symbol.iterator]() {
+//         return this;
+//       },
+//     };
+//   },
+// };
 
-let iterator = iterable[Symbol.iterator]();
-iterator.next();
-for (a of iterator) console.log(a);
-console.log(iterator === iterator[Symbol.iterator]()); // true => Symbol.iterator는 자기 자신을 return하기 때문
+// let iterator = iterable[Symbol.iterator]();
+// iterator.next();
+// for (a of iterator) console.log(a);
+// console.log(iterator === iterator[Symbol.iterator]()); // true => Symbol.iterator는 자기 자신을 return하기 때문
 
-for (const a of document.querySelectorAll("*")) log(a); // 브라우저에서 사용되는 dom과 관련된 여러 값들도 이터레이터 프로토콜을 따르고 있다.
-const all = document.querySelectorAll("*");
-let iter3 = all[Symbol.iterator]();
-log(iter3.next());
-log(iter3.next());
-log(iter3.next());
+// for (const a of document.querySelectorAll("*")) log(a); // 브라우저에서 사용되는 dom과 관련된 여러 값들도 이터레이터 프로토콜을 따르고 있다.
+// const all = document.querySelectorAll("*");
+// let iter3 = all[Symbol.iterator]();
+// log(iter3.next());
+// log(iter3.next());
+// log(iter3.next());
+
+// ## 전개 연산자
+
+const a = [1, 2];
+// a[Symbol.iterator] = null; 을 실행할 경우 iterable 에러가 발생한다.
+log([...a, ...arr, ...set, ...map.keys()]);
