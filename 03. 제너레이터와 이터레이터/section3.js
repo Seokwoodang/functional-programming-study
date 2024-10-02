@@ -74,4 +74,17 @@ let iter2 = odds(40);
 
 for (const a of iter2) console.log(a);
 
-// limit
+// # for of, 전개 연산자, 구조 분해, 나머지 연산자
+console.log(...odds(10));
+console.log([...odds(10), ...odds(20)]);
+
+console.log(...odds(5));
+
+const [head, ...tail] = odds(5);
+console.log(head);
+console.log(...tail);
+
+const [a, b, ...rest] = odds(10);
+console.log(a);
+console.log(b);
+console.log(rest);
