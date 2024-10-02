@@ -9,4 +9,4 @@
   
 [02. ES6에서의 순회와 이터러블 이터레이터 프로토콜](https://github.com/Seokwoodang/functional-programming-study/blob/main/02.%20ES6%EC%97%90%EC%84%9C%EC%9D%98%20%EC%88%9C%ED%9A%8C%EC%99%80%20%EC%9D%B4%ED%84%B0%EB%9F%AC%EB%B8%94%20%EC%9D%B4%ED%84%B0%EB%A0%88%EC%9D%B4%ED%84%B0%20%ED%94%84%EB%A1%9C%ED%86%A0%EC%BD%9C/%EA%B0%95%EC%9D%98%EC%A0%95%EB%A6%AC.md)
 
-[03. 제너레이터와 이터레이터](https://github.com/Seokwoodang/functional-programming-study/tree/main/03.%20%EC%A0%9C%EB%84%88%EB%A0%88%EC%9D%B4%ED%84%B0%EC%99%80%20%EC%9D%B4%ED%84%B0%EB%A0%88%EC%9D%B4%ED%84%B0)    
+[03. 제너레이터와 이터레이터](https://github.com/Seokwoodang/functional-programming-study/blob/main/03.%20%EC%A0%9C%EB%84%88%EB%A0%88%EC%9D%B4%ED%84%B0%EC%99%80%20%EC%9D%B4%ED%84%B0%EB%A0%88%EC%9D%B4%ED%84%B0/3%EA%B0%95%20%EA%B0%95%EC%9D%98%EC%A0%95%EB%A6%AC.md)    
