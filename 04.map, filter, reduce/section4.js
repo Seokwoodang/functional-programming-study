@@ -40,3 +40,32 @@ function* gen() {
 }
 
 log(map((a) => a * a, gen())); // [4, 16]
+
+// # filter
+
+const filter = (f, iter) => {
+  let res = [];
+  for (const a of iter) {
+    if (f(a)) res.push(a);
+  }
+  return res;
+};
+
+console.log(...filter((p) => p.price < 20000, products));
+
+console.log(...filter((p) => p.price >= 20000, products));
+
+console.log(filter((n) => n % 2, [1, 2, 3, 4])); // [1, 3]
+
+console.log(
+  filter(
+    (n) => n % 2,
+    (function* () {
+      yield 1;
+      yield 2;
+      yield 3;
+      yield 4;
+      yield 5;
+    })()
+  )
+); // [1, 3, 5]
