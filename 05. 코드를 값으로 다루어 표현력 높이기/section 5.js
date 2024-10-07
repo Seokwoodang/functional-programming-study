@@ -55,3 +55,36 @@ go(
   (prices) => reduce(add, prices), // 20000 미만인 상품들의 가격 총합
   log
 );
+
+// 함수를 받아 함수를 리턴한다. 받아둔 함수가 두개라면 즉시 실행, 아니라면 추가적으로 받았을 때 실행해준다.
+const curry =
+  (f) =>
+  (a, ..._) =>
+    _.length ? f(a, ..._) : (..._) => f(a, ..._);
+
+const mult = curry((a, b) => a * b);
+
+console.log(mult(2)); // (..._) => f(a, ..._) => 나머지 인자를 더 전달했을 때, 함수에게 받어두둔 인자와 함께 실행
+console.log(mult(1)(2)); // 2
+
+const mult3 = mult(3); // 첫 인자가 3으로 고정된 mult 함수
+console.log(mult3(10)); // 30
+console.log(mult3(5)); // 15
+console.log(mult3(3)); // 9
+
+// curry 를 사용할 경우 map, filter, reduce 를 전부 curry 로 선언해준 뒤에 아래와 같이 작성할 수 있다.
+go(
+  products,
+  (products) => filter((p) => p.price < 20000)(products),
+  (products) => map((p) => p.price)(products),
+  (products) => reduce(add)(products),
+  console.log
+);
+// 또 아래와 같이 다시 한번 줄일 수 있다.
+go(
+  products,
+  filter((p) => p.price < 20000),
+  map((p) => p.price),
+  reduce(add),
+  console.log
+);
