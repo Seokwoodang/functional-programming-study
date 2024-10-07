@@ -11,4 +11,4 @@
 
 [03. 제너레이터와 이터레이터](https://github.com/Seokwoodang/functional-programming-study/blob/main/03.%20%EC%A0%9C%EB%84%88%EB%A0%88%EC%9D%B4%ED%84%B0%EC%99%80%20%EC%9D%B4%ED%84%B0%EB%A0%88%EC%9D%B4%ED%84%B0/3%EA%B0%95%20%EA%B0%95%EC%9D%98%EC%A0%95%EB%A6%AC.md)    
 
-[04. map, filter, reducer](https://github.com/Seokwoodang/functional-programming-study/blob/main/03.%20%EC%A0%9C%EB%84%88%EB%A0%88%EC%9D%B4%ED%84%B0%EC%99%80%20%EC%9D%B4%ED%84%B0%EB%A0%88%EC%9D%B4%ED%84%B0/3%EA%B0%95%20%EA%B0%95%EC%9D%98%EC%A0%95%EB%A6%AC.md)    
+[04. map, filter, reducer](https://github.com/Seokwoodang/functional-programming-study/blob/main/04.map%2C%20filter%2C%20reduce/4%EA%B0%95%20%EA%B0%95%EC%9D%98%EC%A0%95%EB%A6%AC.md)    
