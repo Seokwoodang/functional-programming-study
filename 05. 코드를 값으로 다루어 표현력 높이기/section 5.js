@@ -88,3 +88,26 @@ go(
   reduce(add),
   console.log
 );
+
+// # 함수 조합으로 함수 만들기
+
+go(
+  products,
+  (products) => filter((p) => p.price < 20000, products), // 20000 미만인 상품들
+  (products) => map((p) => p.price, products), // 20000 미만인 상품들의 가격
+  (prices) => reduce(add, prices), // 20000 미만인 상품들의 가격 총합
+  log
+);
+
+const total_price = pipe(
+  map((p) => p.price),
+  reduce(add)
+);
+
+// map, reduce를 total_price로 합침
+go(
+  products,
+  (products) => filter((p) => p.price < 20000, products), // 20000 미만인 상품들
+  total_price,
+  log
+);
