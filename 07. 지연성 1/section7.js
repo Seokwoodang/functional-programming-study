@@ -1,14 +1,14 @@
-const reduce = (f, acc, iter) => {
-  if (!iter) {
-    iter = acc[Symbol.iterator]();
-    // 1번째 값으로 초기화
-    acc = iter.next().value;
-  }
-  for (const a of iter) {
-    acc = f(acc, a);
-  }
-  return acc;
-};
+// const reduce = (f, acc, iter) => {
+//   if (!iter) {
+//     iter = acc[Symbol.iterator]();
+//     // 1번째 값으로 초기화
+//     acc = iter.next().value;
+//   }
+//   for (const a of iter) {
+//     acc = f(acc, a);
+//   }
+//   return acc;
+// };
 
 // ## range
 
@@ -44,23 +44,83 @@ let add = (a, b) => a + b;
 
 // ## take
 
-const curry =
-  (f) =>
-  (a, ..._) =>
-    _.length ? f(a, ..._) : (..._) => f(a, ..._);
+// const curry =
+//   (f) =>
+//   (a, ..._) =>
+//     _.length ? f(a, ..._) : (..._) => f(a, ..._);
+
+// const take = curry((l, iter) => {
+//   let res = [];
+//   for (const a of iter) {
+//     res.push(a);
+//     if (res.length == l) return res;
+//   }
+//   return res;
+// });
+// console.time("");
+// go(range(10000), take(5), reduce(add), log);
+// console.timeEnd("");
+
+// console.time("");
+// go(L.range(10000), take(5), reduce(add), log);
+// console.timeEnd("");
+
+//  ### range, map, filter, take, reduce 중첩 사용
+
+const range = (l) => {
+  let i = -1;
+  let res = [];
+  while (++i < l) {
+    res.push(i);
+  }
+  return res;
+};
+
+const map = curry((f, iter) => {
+  let res = [];
+  iter = iter[Symbol.iterator]();
+  let cur;
+  while (!(cur = iter.next()).done) {
+    const a = cur.value;
+    res.push(f(a));
+  }
+  return res;
+});
+
+const filter = curry((f, iter) => {
+  let res = [];
+  iter = iter[Symbol.iterator]();
+  let cur;
+  while (!(cur = iter.next()).done) {
+    const a = cur.value;
+    if (f(a)) res.push(a);
+  }
+  return res;
+});
 
 const take = curry((l, iter) => {
   let res = [];
-  for (const a of iter) {
+  iter = iter[Symbol.iterator]();
+  let cur;
+  while (!(cur = iter.next()).done) {
+    const a = cur.value;
     res.push(a);
     if (res.length == l) return res;
   }
   return res;
 });
-console.time("");
-go(range(10000), take(5), reduce(add), log);
-console.timeEnd("");
 
-console.time("");
-go(L.range(10000), take(5), reduce(add), log);
-console.timeEnd("");
+const reduce = curry((f, acc, iter) => {
+  if (!iter) {
+    iter = acc[Symbol.iterator]();
+    acc = iter.next().value;
+  } else {
+    iter = iter[Symbol.iterator]();
+  }
+  let cur;
+  while (!(cur = iter.next()).done) {
+    const a = cur.value;
+    acc = f(acc, a);
+  }
+  return acc;
+});
