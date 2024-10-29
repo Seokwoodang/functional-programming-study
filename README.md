@@ -14,3 +14,5 @@
 [04. map, filter, reducer](https://github.com/Seokwoodang/functional-programming-study/blob/main/04.map%2C%20filter%2C%20reduce/4%EA%B0%95%20%EA%B0%95%EC%9D%98%EC%A0%95%EB%A6%AC.md)    
 
 [05. 코드를 값으로 다루어 표현력 높이기](https://github.com/Seokwoodang/functional-programming-study/blob/main/05.%20%EC%BD%94%EB%93%9C%EB%A5%BC%20%EA%B0%92%EC%9C%BC%EB%A1%9C%20%EB%8B%A4%EB%A3%A8%EC%96%B4%20%ED%91%9C%ED%98%84%EB%A0%A5%20%EB%86%92%EC%9D%B4%EA%B8%B0/5%EA%B0%95%20%EA%B0%95%EC%9D%98%EC%A0%95%EB%A6%AC.md)
+
+[07. 지연성 1](https://github.com/Seokwoodang/functional-programming-study/blob/main/07.%20%EC%A7%80%EC%97%B0%EC%84%B1%201/7%EA%B0%95%20%EA%B0%95%EC%9D%98%EC%A0%95%EB%A6%AC.md)
